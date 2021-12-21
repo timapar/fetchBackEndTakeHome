@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "name": "fetchbackendtakehome",
+  "description": "Fetch Backend Apprenticeship Take Home Assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timapar/fetchBackEndTakeHome.git"
+  },
+  "author": "Timothy Parrish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timapar/fetchBackEndTakeHome/issues"
+  },
+  "homepage": "https://github.com/timapar/fetchBackEndTakeHome#readme"
 }
