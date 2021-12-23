@@ -1,5 +1,5 @@
 const transactionLog = []
-const pointsBalance = {'totalPoints' : 0}
+const pointsBalance = {'totalPoints': 0}
 
 const addTransaction = (entry) => {
   transactionLog.push(entry)
@@ -13,8 +13,9 @@ const sortTransactions = () => {
   })
 }
 
-const updatePointsBalance = (value) => {
+const updatePointsBalance = (payer, value) => {
   pointsBalance.totalPoints += value
+  pointsBalance[payer] ? pointsBalance[payer] += value : pointsBalance[payer] = value
 }
 
 const usePoints = (id, value) => {
