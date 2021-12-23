@@ -1,5 +1,5 @@
 const { findWhichPointsUsed } = require('../models/spendPoints')
-const { pointsBalance, updatePointsBalance } = require('../cache')
+const { pointsBalance } = require('../cache')
 
 const spendPoints = (req, res) => {
   // Destructure request body
@@ -10,8 +10,6 @@ const spendPoints = (req, res) => {
   } else {
     // Otherwise, determine which payers the points are coming from
     const pointsSpent = findWhichPointsUsed(points)
-    // Update the overall point balance
-    updatePointsBalance(-points)
     // Respond with which points were spent
     res.status(201).json(pointsSpent)
   }
