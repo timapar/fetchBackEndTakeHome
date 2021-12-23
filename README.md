@@ -9,6 +9,7 @@
 #### Open a terminal in the root directory of the repository.
 #### Execute `npm install` in the terminal.
 #### Followed by `npm start`.
+#### The terminal should now display the URL, including the port, for the API.
 ---
 ## ENDPOINTS
 #### GET "/points/balance"
