@@ -6,12 +6,14 @@ const {
 } = require('../cache')
 
 const addEntry = (logEntry) => {
-  const latestEntryDate = new Date(transactionLog[transactionLog.length - 1])
-  const newEntryDate = new Date(logEntry.timestamp)
+  const logCount = transactionLog.length
   addTransaction(logEntry)
-  if (newEntryDate < latestEntryDate) sortTransactions()
-
   updatePointsBalance(logEntry.points)
+  if (logCount > 0) {
+    const latestEntryDate = new Date(transactionLog[logCount - 1].timestamp)
+    const newEntryDate = new Date(logEntry.timestamp)
+    if (newEntryDate < latestEntryDate) sortTransactions()
+  }
 }
 
 module.exports = { addEntry }
