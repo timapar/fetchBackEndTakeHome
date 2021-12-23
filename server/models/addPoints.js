@@ -6,12 +6,14 @@ const {
 } = require('../cache')
 
 const addEntry = (logEntry) => {
+  // Destructure entry
+  const { payer, points } = logEntry
   // Get number of logs before adding the new entry
   const logCount = transactionLog.length
   // Add entry to log in cache
   addTransaction(logEntry)
-  // Update the total available points in cache
-  updatePointsBalance(logEntry.points)
+  // Update the balance of available points in cache
+  updatePointsBalance(payer, points)
   
   // If there were any entries in the log previously
   if (logCount > 0) {
