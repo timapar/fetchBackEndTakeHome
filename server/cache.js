@@ -13,9 +13,14 @@ const sortTransactions = () => {
   })
 }
 
+const updatePointsBalance = (value) => {
+  pointsBalance.totalPoints += value
+}
+
 module.exports = { 
   transactionLog, 
   pointsBalance, 
-  addTransaction,
-  sortTransactions
+  addTransaction, 
+  sortTransactions,
+  updatePointsBalance,
 }
