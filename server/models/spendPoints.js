@@ -1,4 +1,4 @@
-const { transactionLog, usePoints } = require('../cache')
+const { transactionLog, usePoints, updatePointsBalance } = require('../cache')
 
 const findWhichPointsUsed = (points) => {
   // Create collection to save which points are used
@@ -27,7 +27,11 @@ const findWhichPointsUsed = (points) => {
   for (const payer in pointsUsedByPayer) {
     listOfPointsUsed.push({ payer, "points": pointsUsedByPayer[payer]})
   }
-
+  // Update the total point balances based on what was used
+  for (const entry of listOfPointsUsed) {
+    const { payer, points } = entry
+    updatePointsBalance(payer, points)
+  }
   return listOfPointsUsed
 }
 
