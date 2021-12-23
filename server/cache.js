@@ -17,10 +17,20 @@ const updatePointsBalance = (value) => {
   pointsBalance.totalPoints += value
 }
 
+const usePoints = (id, value) => {
+  for (const entry of transactionLog) {
+    if (entry.transactionID === id) {
+      entry.availablePoints -= value
+      break
+    }
+  }
+}
+
 module.exports = { 
   transactionLog, 
   pointsBalance, 
   addTransaction, 
   sortTransactions,
   updatePointsBalance,
+  usePoints,
 }
